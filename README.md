@@ -1,62 +1,60 @@
 <h1 align="center">Deepesh Sonar</h1>
 
 <p align="center">
-  Retrieval and long-term memory for language models
+  <b>I build systems, then try to break my own claims about them.</b>
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/deepeshsonar/">LinkedIn</a> ·
-  <a href="mailto:18deepnar@gmail.com">Email</a> ·
-  <a href="https://github.com/Deepnar/ice">ICE</a>
+  <a href="https://www.linkedin.com/in/deepeshsonar/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="mailto:18deepnar@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+  <img src="https://img.shields.io/badge/Mumbai,%20India-1f8a52?style=for-the-badge" alt="Mumbai">
 </p>
 
 ---
 
-I'm a third-year Computer Engineering student in Mumbai. I started learning ML in December
-2025 and spent the next seven months building **ICE**, a memory system for language models,
-mostly on my own. The paper is submitted to ACM TIST.
+Third-year Computer Engineering student in Mumbai. I work on **information retrieval,
+long-term memory for language models, and evaluation** — how you measure whether a system
+actually does what you claim, which turns out to be the harder half.
 
-The problem I keep coming back to: every conversation with a model starts from zero. Bigger
-context windows haven't fixed that, because a window is a buffer, not a memory. What I found
-building ICE is that the instinct to retrieve *more* is wrong — retrieval quality is governed
-by what you leave out.
+Most of what I build starts as a question I couldn't find a satisfying answer to. Lately those
+have been: *what does a model actually need to remember, and how would you know if it
+remembered the right thing?* Before that: *can a constraint solver produce a timetable nobody
+has to fix by hand?*
 
-### How I work
+### 🔬 How I work
 
-I try to break my own claims before someone else does. ICE ships with a **fidelity audit**
-that lists which of its components were genuinely defective, which the benchmark never
-exercised, and which actually carried the result — because ablation studies routinely conflate
-those three, and a component that never ran isn't a component that failed.
+**I write the criticism of my own work before someone else does.** My largest project ships
+with a fidelity audit listing which of its components were genuinely defective, which the
+benchmark never exercised, and which actually carried the result — because ablation studies
+routinely conflate those three, and a component that never ran isn't a component that failed.
 
-The honest version of my headline result is that ICE *matches* a strong vector-RAG baseline on
-answer quality rather than beating it. It does so on 32% fewer context fragments, wins blind
-head-to-head comparisons 30.6% to 21.2%, and holds up under context density where the baseline
-fails 94.2% of probes. I'd rather state that precisely than round it up.
+**I'd rather state a result precisely than round it up.** When my system matched a baseline
+instead of beating it, that's what I reported — along with the 32% context reduction that made
+the match interesting.
 
-### What I've built
+**I document more than most people think is reasonable.** Architecture notes, threat models,
+cost models. It's how I find out whether I actually understand something.
 
-**[ICE](https://github.com/Deepnar/ice)** — a local-first memory layer between any
-OpenAI-compatible client and a locally served model. Six retrieval legs fused with weighted
-Reciprocal Rank Fusion, a bi-temporal knowledge graph where superseded facts stay queryable as
-history, and a classifier that decides whether long-term retrieval should fire at all.
-Evaluated with **LSREP**, a longitudinal protocol I designed for it.
+### 🛠️ Work
 
-**[timetable-generator](https://github.com/Deepnar/timetable-generator)** — constraint-driven
-scheduling. One engine, seven timetable types, OR-Tools CP-SAT and a greedy solver behind a
-hard-constraint registry that fails closed.
+| Project | What it is |
+| :--- | :--- |
+| **[ice](https://github.com/Deepnar/ice)** | A local-first memory layer between any OpenAI-compatible client and a locally served model. Six retrieval legs fused with weighted Reciprocal Rank Fusion, a knowledge graph where superseded facts stay queryable as history, and a classifier gating whether retrieval fires at all. Evaluated with **LSREP**, a longitudinal protocol I designed for it. Paper submitted to ACM TIST · Apache-2.0 |
+| **[timetable-generator](https://github.com/Deepnar/timetable-generator)** | Constraint-driven scheduling. One engine covering seven timetable types, OR-Tools CP-SAT alongside a greedy solver, behind a hard-constraint registry that fails closed. |
+| **[prompt-routing-classifier](https://github.com/Deepnar/prompt-routing-classifier)** | Multi-label topic and intent classification for routing prompts to specialised models. Built the pipeline end to end, from dataset construction to CPU inference. |
+| **[DS-Practice](https://github.com/Deepnar/DS-Practice)** | Algorithms, data structures, OS and networking from coursework — written from the algorithm rather than adapted from a library. |
+| **[micrograd-from-scratch](https://github.com/Deepnar/micrograd-from-scratch)** | Scalar autodiff and manual backpropagation, no ML libraries. |
 
-**[prompt-routing-classifier](https://github.com/Deepnar/prompt-routing-classifier)** —
-multi-label topic and intent classification for routing prompts to specialised models. Became
-ICE's classification engine.
+Off GitHub: I've taken a civic-reporting platform through two national and state competitions
+with a six-person team, where I wrote the security threat model and the infrastructure cost
+model, and led the pitch.
 
-**[DS-Practice](https://github.com/Deepnar/DS-Practice)** — algorithms, data structures, OS and
-networking from coursework, implemented from the algorithm rather than adapted from a library.
+### 🐧 Elsewhere
 
-### Elsewhere
+Python · Java · PyTorch · FastAPI · PostgreSQL and pgvector · OR-Tools · Docker.
+I run Arch on a machine I partitioned the hard way.
 
-Python and Java, PyTorch, FastAPI, PostgreSQL and pgvector, OR-Tools. I run Arch on a machine
-I partitioned the hard way, and I write more documentation than most people think is
-reasonable.
+<br>
 
-Currently looking for **research and startup internships** in retrieval, memory, or applied ML
-systems. If you're working on any of that, I'd like to hear from you.
+> **Open to research and startup internships** in retrieval, memory, or applied ML systems.
+> If you're working on any of that, I'd like to hear from you.
