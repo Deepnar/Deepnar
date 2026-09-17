@@ -5,67 +5,98 @@
 </p>
 
 <p align="center">
+  <a href="https://www.linkedin.com/in/deepeshsonar/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
   <a href="https://orcid.org/0009-0008-1762-4246"><img src="https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" alt="ORCID"></a>
-  <a href="https://arxiv.org/abs/2609.16730"><img src="https://img.shields.io/badge/arXiv-LSREP-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white" alt="LSREP on arXiv"></a>
-  <a href="https://github.com/Deepnar">
-    <img src="https://komarev.com/ghpvc/?username=Deepnar&label=Profile+Views&color=7C3AED&style=for-the-badge" alt="Profile Views">
-  </a>
+  <a href="mailto:18deepnar@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+  <a href="https://x.com/DeepnarS"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X"></a>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=Deepnar&label=Profile+Views&color=7C3AED&style=for-the-badge" alt="Profile Views">
 </p>
 
 ---
 
-Third-year Computer Engineering student in Mumbai working on **information retrieval,
-long-term memory for language models, and evaluation**.
+Computer Engineering student in Mumbai.
 
-I'm interested in a deceptively simple question: *when information changes over months of
-interaction, what should a memory system remember — and how do we determine whether it
-remembered the right thing?*
+I like building things from first principles, pushing them until they break, and figuring out
+which parts actually mattered.
+
+Some projects become research. Some become tools. Some exist because I wanted to understand
+an idea properly and ended up implementing far more of it than originally planned.
 
 ### 📄 Current research
 
-**[LSREP: A Longitudinal State-Replay Protocol for Evaluating Conversational Memory, with ICE v2 as an Audited Local-First Architecture](https://arxiv.org/abs/2609.16730)**
+<p>
+  <a href="https://arxiv.org/abs/2609.16730">
+    <img src="https://img.shields.io/badge/arXiv-B31B1B?style=flat&logo=arxiv&logoColor=white" alt="arXiv">
+  </a>
+  <b>LSREP: A Longitudinal State-Replay Protocol for Evaluating Conversational Memory, with ICE v2 as an Audited Local-First Architecture</b>
+</p>
 
-LSREP treats conversational memory evaluation as an evolving process rather than a static
-retrieval task. It combines ordered replay, explicit lifecycle schedules, repeated checkpoint
-probes, evolving reference answers, and mechanism-fidelity auditing.
+LSREP is a longitudinal evaluation protocol for conversational memory. It treats memory as
+something that evolves over time rather than as a static retrieval problem, using ordered
+replay, repeated probes, evolving reference answers, lifecycle schedules, and
+mechanism-fidelity auditing.
 
-The protocol is evaluated with **[ICE](https://github.com/Deepnar/ice)**, my local-first
-conversational memory architecture, alongside matched vector-RAG baselines and a separate
-LongMemEval evaluation.
+The work grew out of building and evaluating ICE, but the larger question interested me more:
+
+**How do you know whether a system actually behaves the way its architecture says it does?**
+
+### 🛠️ Selected work
+
+**[ICE](https://github.com/Deepnar/ice)**  
+A local-first conversational memory system built around typed memory, retrieval fusion,
+evolving state, and evaluation that traces which mechanisms actually affected the final result.
+
+**[Presentation Forge](https://github.com/Deepnar/presentation-forge)**  
+A self-hosted presentation and report generator with PPTX/DOCX export, deterministic themes,
+local-model support, BYOK providers, and a Docker-first setup.
+
+**[timetable-generator](https://github.com/Deepnar/timetable-generator)**  
+A constraint-driven scheduling system using OR-Tools CP-SAT alongside a greedy solver,
+designed around explicit hard constraints rather than post-generation cleanup.
+
+I keep plenty of smaller repos too: coursework, experiments, model tooling, systems work,
+from-scratch implementations, and things I built mostly because I wanted to understand them.
 
 ### 🔬 How I work
 
-**I write the criticism of my own work before someone else does.** I try to distinguish
-mechanisms that genuinely failed from mechanisms that never ran, were never exercised,
-or simply never reached the final context.
+**I try to separate “didn't work” from “wasn't actually tested.”**  
+A mechanism that failed, never ran, was never exercised, or never reached the final output
+does not tell you the same thing.
 
-**I'd rather state a result precisely than round it up.** Matching a baseline instead of
-beating it is still a result. The interesting part is understanding what produced it.
+**I prefer precise results to impressive-sounding ones.**  
+If something matches a baseline, loses to one, or only works under certain conditions,
+I want the write-up to say exactly that.
 
-**I document aggressively.** Architecture notes, evaluation traces, threat models, and cost
-models are often where I discover that I don't understand something as well as I thought.
+**I usually care about the whole system.**  
+The model or algorithm is often only one piece. The data path, API, database, evaluation
+harness, deployment, cost, failure modes, and edge cases usually matter just as much.
 
-### 🛠️ Projects
-
-| Project | What it is |
-| :--- | :--- |
-| **[ICE](https://github.com/Deepnar/ice)** | Local-first conversational memory with typed stores, retrieval fusion, dynamic context budgets, and auditable retrieval paths. |
-| **[timetable-generator](https://github.com/Deepnar/timetable-generator)** | Constraint-driven scheduling across seven timetable types using OR-Tools CP-SAT and a greedy solver behind a hard-constraint registry. |
-| **[prompt-routing-classifier](https://github.com/Deepnar/prompt-routing-classifier)** | Multi-label topic and intent classification for routing prompts to specialised models, from dataset construction through CPU inference. |
-| **[DS-Practice](https://github.com/Deepnar/DS-Practice)** | Algorithms, data structures, operating systems, and networking implemented through coursework. |
-| **[micrograd-from-scratch](https://github.com/Deepnar/micrograd-from-scratch)** | Scalar autodiff and manual backpropagation without ML libraries. |
+**I document heavily.**  
+Architecture notes, experiments, threat models, evaluation traces, and design decisions
+are often where I notice what I misunderstood.
 
 ### 🌱 Open source
 
-I contribute fixes upstream when I run into problems worth fixing, including work in
-**[MNE-Python](https://github.com/mne-tools/mne-python/pulls?q=is%3Apr+author%3ADeepnar)**
-and other ML/scientific Python projects.
+I contribute upstream when I run into bugs or gaps that seem worth fixing.
 
-### 🐧 Stack
+Some changes are small compatibility fixes. Others turn into longer debugging sessions,
+tests, CI archaeology, and learning how a mature codebase actually makes decisions.
 
-Python · Java · PyTorch · FastAPI · PostgreSQL · pgvector · OR-Tools · Docker · Linux
+**[View my pull requests →](https://github.com/pulls?q=is%3Apr+author%3ADeepnar)**
+
+### ⚙️ Stuff I use
+
+Python · Java · Rust · PyTorch · FastAPI · PostgreSQL · pgvector · Redis · OR-Tools · Docker · Linux
+
+I run Arch, self-host some of my tooling, experiment with local models, and spend an
+unreasonable amount of time turning configuration problems into projects.
 
 <br>
 
-> **Open to research and startup internships** in information retrieval, conversational
-> memory, evaluation, and applied ML systems.
+> **Open to research and startup internships.**
+>
+> If you're working on something technically interesting and think I could be useful,
+> I'd like to hear about it.
